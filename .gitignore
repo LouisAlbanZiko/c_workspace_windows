@@ -1,0 +1,18 @@
+# exclude everything
+*
+
+# git
+!.gitignore
+!.gitattributes
+
+# Scripts
+!build.bat
+!clean.bat
+!test.bat
+!_util/
+!_util/*
+
+# Misc
+!premake5.lua
+!LICENSE
+!README.md

@@ -8,6 +8,7 @@
 # Scripts
 !build.bat
 !clean.bat
+!rebuild.bat
 !test.bat
 !_util/
 !_util/*

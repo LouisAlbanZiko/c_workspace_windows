@@ -2,26 +2,20 @@
 
 CALL _util\_init.bat
 
+if %errorlevel% NEQ 0 (
+	EXIT /b 1
+)
+
 CALL _util\premake_execute.bat
 
 setlocal enabledelayedexpansion
 
+set method=clean
 if NOT [%1]==[] (
-	echo Building %1...
-	msbuild %1 -t:clean
-	if %errorlevel% NEQ 0 (
-		echo Failed to build %1.
-	) ELSE (
-		echo Sucessfully built %1.
-	)
-) ELSE (
-	echo Building solution.
-	msbuild -t:clean
-	if %errorlevel% NEQ 0 (
-		echo Failed to build solution.
-	) ELSE (
-		echo Sucessfully built solution.
-	)
+	set target=%1
 )
+CALL _util\msbuild_execute.bat
 
 endlocal
+
+EXIT /b 0

@@ -22,4 +22,4 @@ workspace (baseName)
 	targetdir ("_bin/" .. outputpath)
 	objdir ("_binobj/" .. outputpath)
 
-	include "project_list.lua"
+	include "../project_list.lua"

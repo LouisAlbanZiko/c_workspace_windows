@@ -1,13 +1,23 @@
-workspace "C"
+baseName = path.getbasename(os.getcwd());
 
-	configurations { "Debug", "Release" }
-	architecture "x64"
+workspace (baseName)
+	configurations { "Debug", "Release"}
+	platforms { "x64" }
+
+	filter "configurations:Debug"
+		defines { "DEBUG" }
+		symbols "On"
+
+	filter "configurations:Release"
+		defines { "NDEBUG" }
+		optimize "On"
+
+	filter { "platforms:x64" }
+        architecture "x86_64"
+	
+	filter {}
 
 	outputpath = "%{prj.name}/%{cfg.buildcfg}/"
 
 	targetdir ("_bin/" .. outputpath)
-	objdir ("_bin_obj/" .. outputpath)
-
-	defines { "_WIN32", "WIN32" }
-
-	include "project_list.lua"
+	objdir ("_binobj/" .. outputpath)

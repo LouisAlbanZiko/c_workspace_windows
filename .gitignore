@@ -17,3 +17,7 @@
 !premake5.lua
 !LICENSE
 !README.md
+
+# exluding changes to
+premake5.lua
+_util/msvc_vars.bat

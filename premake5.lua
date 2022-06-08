@@ -22,4 +22,6 @@ workspace (baseName)
 	targetdir ("_bin/" .. outputpath)
 	objdir ("_binobj/" .. outputpath)
 
+	location "../"
+
 	include "../project_list.lua"

@@ -6,10 +6,8 @@
 !.gitattributes
 
 # Scripts
-!build.bat
-!clean.bat
-!rebuild.bat
-!test.bat
+!make.bat
+!setup.bat
 !_util/
 !_util/*
 

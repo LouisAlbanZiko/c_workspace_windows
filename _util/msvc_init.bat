@@ -2,7 +2,7 @@
 
 echo MVS environment not initialized. Initializing...
 
-CALL _util\msvc_vars.bat
+CALL %~dp0msvc_vars.bat
 
 set setup_path="%__MVS_PATH__%\VC\Auxiliary\Build\vcvars64.bat"
 

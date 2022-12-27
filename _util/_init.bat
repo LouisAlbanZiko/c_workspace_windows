@@ -1,7 +1,7 @@
 @echo off
 
 IF NOT DEFINED DevEnvDir (
-	CALL _util\msvc_init.bat
+	CALL %~dp0msvc_init.bat
 	IF %errorlevel% NEQ 0 (
 		EXIT /b 1
 	)

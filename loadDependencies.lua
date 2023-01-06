@@ -10,11 +10,12 @@ function include_dependencies(deplist, folder)
 	print('included ' .. folder)
 	for linestring in io.lines(file) do
 		for w in linestring:gmatch("%S+") do
-			dep_path = w
+			dep_name = w
 		end
-		if(not deplist[dep_path]) then
+		dep_path = '_vendor/' .. dep_name
+		if(not deplist[dep_name]) then
 			include(dep_path)
-			deplist[dep_path] = true
+			deplist[dep_name] = true
 			print("New dependency '" .. dep_path .. "'")
 			include_dependencies(deplist, dep_path)
 		end
